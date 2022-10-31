@@ -16,18 +16,14 @@ class Particle:
     def moveleft(self):
         self.x -= 1
 
-    def display(self, name):
-        print(f"{name} is at ({self.x}, {self.y})")
+    def display(self):
+        print(f"{self.name} is at ({self.x}, {self.y})")
 
-if __name__ == "__main_":
+if __name__ == "__main__":
 
     alpha = Particle("Alpha")
     beta = Particle("Beta")
-    delta = {}
-
-    for x in range(6):
-        delta.append(Particle(x))
-        
+    delta = Particle("Delta")
 
     alpha.movedown()
     alpha.moveright()
@@ -37,11 +33,13 @@ if __name__ == "__main_":
     beta.moveup()
     beta.moveright()
 
-    alpha.display("Alpha")
-    beta.display("Beta")
+    delta.movedown()
+    delta.movedown()
+    delta.moveleft()
 
-    for x in range(6):
-        print(delta[x])
+    alpha.display()
+    beta.display()
+    delta.display()
 
 
 
